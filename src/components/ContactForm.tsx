@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export default function ContactForm() {
 
-    const [divState, setDivState] = useState("sent");
+    const [divState, setDivState] = useState("form");
 
     async function submit(e: React.FormEvent<HTMLFormElement>) {
         setDivState("loading")
