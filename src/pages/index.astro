@@ -1,0 +1,46 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+const title = "Home | Rohan Reddy Alleti";
+
+
+import { getCollection, getEntryBySlug } from 'astro:content';
+// Get all entries from a collection. Requires the name of the collection as an argument.
+const allBlogPosts = await getCollection('blog');
+// Get a single entry from a collection. Requires the name of the collection and the entry's slug as arguments.
+const oneBlogPost = await getEntryBySlug('blog', 'post-1');
+---
+
+<Layout title={title}>
+	<main class="my-40 w-4/5 lg:w-2/3 mx-auto animate__animated animate__fadeInDown">
+		<div>
+			<p class="font-bold text-primary">Hi, I am</p>
+			<h1 class="text-5xl font-bold mt-5">Rohan Reddy Alleti</h1>
+			<!-- <small class="text-gray-500">Web Developer, Systems & Backend Developer, Frontend (a bit)</small> -->
+		</div>
+		<div class="flex flex-col justify-center gap-5 items-start my-7">
+			<p>
+				I am a <span class="highlight">Full Stack Developer</span> mostly
+				focused on <span class="highlight">Backend Development</span>
+				with frameworks such as <span class="highlight">Django</span>, <span
+					class="highlight">FastAPI</span
+				> and <span class="highlight">ExpressJs</span>.
+			</p>
+			<p class="">Current learning Rust and Typescript.</p>
+		</div>
+		<div class="flex flex-col">
+			<div class="flex justify-start items-center gap-2">
+				Find More About Me <i
+					class="fa-solid fa-arrow-right-long text-2xl"></i>
+			</div>
+			<div class="flex justify-start text-black my-10 text-2xl items-center gap-2">
+				<a href="https://github.com/RohanJnr" class="hover:scale-[1.1] duration-200 ease-in">
+					<i class="bg-[#ffffff] p-4 rounded-full fa-brands fa-github"></i>
+				</a>
+				<a href="https://www.linkedin.com/in/rohanalleti/" class="hover:scale-[1.1] duration-200 ease-in">
+					<i class="bg-[#ffffff] p-4 rounded-full fa-brands fa-linkedin-in"></i>
+				</a>
+			</div>
+		</div>
+	</main>
+</Layout>
